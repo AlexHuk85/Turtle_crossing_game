@@ -10,6 +10,7 @@ screen.tracer(0)
 screen.listen()
 
 player = Player()
+scoreboard = Scoreboard()
 
 screen.onkey(player.move_forward, 'Up')
 
@@ -18,7 +19,13 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 
+    # Update score board if player cross the finish line
+    if player.ycor() > 280:
+        scoreboard.add_score()
+
     # Check if player react the finish line
     player.back_to_begining()
+
+
 
 screen.exitonclick()
