@@ -28,7 +28,6 @@ while game_is_on:
     for c in car_list:
         c.move_forward()
 
-
     # Update score board if player cross the finish line
     if player.ycor() > 280:
         scoreboard.add_score()
